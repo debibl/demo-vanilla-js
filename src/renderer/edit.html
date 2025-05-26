@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    />
+    <title>Редактировать партнера</title>
+    <link rel="stylesheet" href="src/assets/main.css" />
+  </head>
+
+  <body>
+    <nav>
+      <button class="btn-back"><a href="index.html">Назад</a></button>
+    </nav>
+    <header>
+      <h1>Редактировать партнера</h1>
+    </header>
+    <!-- На форме для добавления/редактирования партнера должны быть
+    предусмотрены следующие поля: наименование, тип партнера (выпадающий
+    список), рейтинг, адрес, ФИО директора, телефон и email компании. -->
+    <main class="form-align">
+      <form id="form-edit">
+        <label>Название компании:</label>
+        <input name="name" id="name" required />
+        <label>Тип организации:</label>
+        <select name="type" id="type" required>
+          <option value="">- Выберите тип организации -</option>
+          <option value="ЗАО">ЗАО</option>
+          <option value="ОАО">ОАО</option>
+          <option value="ООО">ООО</option>
+          <option value="ПАО">ПАО</option>
+        </select>
+        <label>Адрес:</label>
+        <input name="adress" id="adress" required />
+        <label>ФИО директора:</label>
+        <input name="ceo" id="ceo" required />
+        <label>Телефон:</label>
+        <input name="phone" id="phone" pattern="[0-9]*" title="Только числа" placeholder="___ ___ __ __" required />
+        <label>Электронная почта:</label>
+        <input type="email" name="email" id="email"  required />
+        <label>Рейтинг:</label>
+        <input type="number" name="rating" id="rating" min="0" required />
+        <div class="btn-center-align">
+          <button type="submit" id="btn-edit">Редактировать</button>
+        </div>
+      </form>
+    </main>
+
+    <script type="module" src="src/edit.js"></script>
+  </body>
+</html>

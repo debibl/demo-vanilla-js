@@ -1,0 +1,120 @@
+:root {
+  --secondary-color: #f4e8d3;
+  --accent-color: #67ba80;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+
+  &:hover {
+    background-color: var(--accent-color);
+  }
+
+  &:active {
+    background-color: white;
+  }
+}
+
+.btn-center-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#info {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    line-height: 0.5;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--accent-color);
+    }
+
+    &:active {
+      background-color: white;
+    }
+
+    .headline {
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    .discount {
+      padding-right: 50px;
+      font-size: 20px;
+    }
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  .btn-back {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+.form-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  form {
+    width: 400px;
+  
+    input, select {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0;
+    }
+
+    #btn-add, #btn-edit {
+      margin: 20px;
+    }
+  }
+}
