@@ -78,7 +78,7 @@ $ npm i
 import react from '@vitejs/plugin-react'
 ```
 
-### 6. Измените файл electron.vite.config.mjs
+### 6. Измените файл `electron.vite.config.mjs`
 **Это самое важное!** Если вы этого не сделаете, ваш проект не будет билдиться.
 
 Оригинальный файл сборщика в шаблоне выглядит вот так:
@@ -127,6 +127,17 @@ export default defineConfig({
     }
   }
 })
+```
+То есть меняется часть кода с renderer процессом:
+```js
+  renderer: {
+    resolve: {
+      alias: {
+        '@renderer': resolve('src/renderer/src')
+      }
+    },
+    plugins: [react()]
+  }
 ```
 
 ## ‼️ ОЧЕНЬ ВАЖНАЯ ИНФОРМАЦИЯ
