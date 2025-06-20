@@ -3,7 +3,7 @@ import { join } from 'path';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import { Client } from 'pg';
 
-// Database connection
+// Подключение к базе данных
 
 const login = {
   user: 'electron',
@@ -31,7 +31,7 @@ const withDatabaseConnection = async (callback) => {
   }
 };
 
-// Custom commands
+// Команды запросов к базе данных
 
 const getPartners = () => {
   return withDatabaseConnection(async (client) => {
@@ -98,8 +98,10 @@ const getDiscount = (_, id) => {
   });
 };
 
+// Создание относительного пути к иконке приложения
 const baseIconPath = join(__dirname, '../../resources/Мастер пол');
 
+// Создание главного окна
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 700,
@@ -135,7 +137,7 @@ function createWindow() {
 app.whenReady().then(() => {
   electronApp.setAppUserModelId('com.electron');
 
-  // Custom commands handlers
+  // Отправка команд с запросами в preload
   ipcMain.handle('getPartners', getPartners);
   ipcMain.handle('getDiscount', getDiscount);
   ipcMain.handle('addPartner', addPartner);

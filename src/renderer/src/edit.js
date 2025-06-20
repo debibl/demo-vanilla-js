@@ -3,6 +3,7 @@ const inputs = Array.from(document.querySelectorAll('input'));
 inputs.push(document.querySelector('select'));
 const id = new URLSearchParams(window.location.search).get('id');
 
+// Загрузка информации о партнерах из базы данных
 const loadPartnerInfo = async () => {
   const partner = await window.api.getPartnerById(id);
   const inputNames = inputs.map((input) => input.name);
@@ -13,6 +14,7 @@ const loadPartnerInfo = async () => {
 
 loadPartnerInfo();
 
+// Обработчик события отправки формы редактирования
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const data = new FormData(form);

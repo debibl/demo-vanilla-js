@@ -1,5 +1,6 @@
 const info = document.getElementById('info');
 
+// Функиця создания карточки партнера
 const createPartner = async (partner) => {
   const discount = await window.api.getDiscount(partner.id);
   return `
@@ -15,6 +16,7 @@ const createPartner = async (partner) => {
   `;
 };
 
+// Функция загрузки информации о партнерах из базы данных
 const loadPartners = async () => {
   const data = await window.api.getPartners();
   const partners = await Promise.all(
@@ -22,7 +24,7 @@ const loadPartners = async () => {
   );
   info.innerHTML = partners.join('');
   
-  // Handle click on partner
+  // Обработчик нажатия на карточку партнера
   const cards = document.querySelectorAll('.container');
   cards.forEach((card) => {
     card.addEventListener('click', () => {

@@ -2,6 +2,7 @@ const form = document.getElementById('form-add');
 const inputs = Array.from(document.querySelectorAll('input'));
 inputs.push(document.querySelector('select'));
 
+// Обработчик события отправки формы добавления
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const data = new FormData(form);
